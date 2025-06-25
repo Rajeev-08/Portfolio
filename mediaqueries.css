@@ -1,22 +1,22 @@
-/* @media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
   #profile {
     height: 83vh;
     margin-bottom: 6rem;
   }
   .about-containers {
-   flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   #contact,
   #projects {
     height: fit-content;
   }
- #projects .about-containers {
+  #projects .about-containers {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr); /* 2-column grid */
     gap: 1.5rem;
     justify-content: center;
   }
-} 
+}
 
 @media screen and (max-width: 1200px) {
   #desktop-nav {
@@ -57,9 +57,9 @@
     padding: 1rem;
   }
   #projects .about-containers {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr); /* Maintain 2-column grid */
   }
-} */
+}
 
 @media screen and (max-width: 768px) {
   #profile {
