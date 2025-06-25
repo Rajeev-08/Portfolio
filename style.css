@@ -216,11 +216,15 @@ section {
 }
 
 /* BUTTONS */
+pre{
+  font-family: "Poppins", sans-serif;
+}
 
 .btn-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
+ 
 }
 
 .btn {
@@ -395,6 +399,9 @@ article .icon {
   object-fit: cover;
   margin-bottom: 1rem;
 }
+.nemo{
+  border: 2px solid rgb(220, 220, 220);
+}
 
 .project-title {
   margin: 1rem 0;
@@ -410,10 +417,17 @@ article .icon {
   max-width: 150px;
 }
 
-.nemo {
+/* .nemo {
   border: 2px solid hsl(0, 0%, 88%);
   border-radius: 2rem;
-}
+} */
+
+
+
+
+
+
+
 
 /* CONTACT */
 
