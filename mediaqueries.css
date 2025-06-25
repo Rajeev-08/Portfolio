@@ -112,6 +112,10 @@
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+  #projects .details-container:nth-child(3),
+  #projects .details-container:nth-child(4) {
+    order: 2;
+  }
   .project-img {
     height: 150px;
   }
@@ -189,6 +193,14 @@
   .experience-sub-title {
     font-size: 1.25rem;
   }
+  #projects .about-containers {
+    display: flex;
+    flex-direction: column;
+  }
+  #projects .details-container:nth-child(3),
+  #projects .details-container:nth-child(4) {
+    order: 2;
+  }
   .project-img {
     height: 120px;
   }
@@ -200,5 +212,28 @@
   }
   footer p {
     font-size: 0.85rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #projects .about-containers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #projects .details-container {
+    width: 48%; /* Approximately half the container width, accounting for margins */
+    margin-bottom: 1rem;
+  }
+  .project-img {
+    height: 80px;
+  }
+  .project-title {
+    font-size: 0.9rem;
+  }
+  .project-btn {
+    max-width: 90px;
+    font-size: 0.7rem;
+    padding: 0.5rem;
   }
 }

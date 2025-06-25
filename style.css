@@ -62,7 +62,6 @@ a:hover {
   font-family: "Roboto", sans-serif;
   font-size: 2rem;
   color: rgb(0, 0, 0);
-
 }
 
 .logo:hover {
@@ -304,6 +303,7 @@ section {
   border-color: rgb(163, 163, 163);
   text-align: center;
 }
+
 .text-container {
   margin-bottom: 30px;
   margin-left: 200px;
@@ -373,10 +373,19 @@ article .icon {
   position: relative;
 }
 
+#projects .about-containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
   padding: 1rem;
+  border-radius: 2rem;
+  text-align: center;
 }
 
 .project-img {
@@ -384,6 +393,7 @@ article .icon {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .project-title {
@@ -395,6 +405,14 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 150px;
+}
+
+.nemo {
+  border: 2px solid hsl(0, 0%, 88%);
+  border-radius: 2rem;
 }
 
 /* CONTACT */
@@ -446,8 +464,4 @@ footer {
 
 footer p {
   text-align: center;
-}
-.nemo{
-  border:2px solid hsl(0, 0%, 88%);
-  border-radius: 2rem;
 }
