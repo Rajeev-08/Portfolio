@@ -12,7 +12,7 @@
   }
   #projects .about-containers {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2-column grid */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 1.5rem;
     justify-content: center;
   }
@@ -57,7 +57,7 @@
     padding: 1rem;
   }
   #projects .about-containers {
-    grid-template-columns: repeat(2, 1fr); /* Maintain 2-column grid */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -118,11 +118,11 @@
     font-size: 1.5rem;
   }
   #projects .about-containers {
-    grid-template-columns: repeat(2, 1fr); /* Maintain 2-column grid */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
   .project-img {
-    height: 120px; /* Adjusted for smaller screens */
+    height: 120px; 
   }
   .project-title {
     font-size: 1.1rem;
@@ -199,11 +199,11 @@
     font-size: 1.25rem;
   }
   #projects .about-containers {
-    grid-template-columns: repeat(2, 1fr); /* Maintain 2-column grid */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 0.8rem;
   }
   .project-img {
-    height: 100px; /* Further adjusted for very small screens */
+    height: 100px; 
   }
   .project-title {
     font-size: 1rem;
