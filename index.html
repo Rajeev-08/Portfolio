@@ -4,62 +4,62 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rajeev - Frontend Developer</title>
+  <meta name="description" content="Portfolio of Rajeev R, a Computer Science and Engineering graduate focused on AI, machine learning, and full-stack development.">
+  <title>Rajeev R | AI & Full-Stack Developer</title>
+   <link rel="icon" type="image/x-icon" href="/assets/logo.png">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="mediaqueries.css">
+  <link rel="stylesheet" href="portfolio-fixes.css">
 </head>
 <body>
   <nav id="desktop-nav">
-    <div class="logo"></div>
+    <div class="logo">Rajeev R</div>
     <div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
+        <li><a href="#experience">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
+
   <nav id="hamburger-nav">
-    <div class="logo"></div>
+    <div class="logo">Rajeev R</div>
     <div class="hamburger-menu">
-      <div class="hamburger-icon" onclick="toggleMenu()">
+      <div class="hamburger-icon" onclick="toggleMenu()" role="button" aria-label="Toggle navigation" tabindex="0">
         <span></span>
         <span></span>
         <span></span>
       </div>
       <div class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </div>
     </div>
   </nav>
+
   <section id="profile">
     <div class="section__pic-container">
-      <img src="assets/profile-pic.jpg" alt="Rajeev profile picture" />
+      <img src="assets/profile-pic.jpg" alt="Portrait of Rajeev R">
     </div>
     <div class="section__text">
       <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title">Rajeev</h1>
-      <p class="section__text__p2">Frontend Developer & AI Enthusiast</p>
+      <h1 class="title">Rajeev R</h1>
+      <p class="section__text__p2">AI & Full-Stack Developer</p>
       <div class="btn-container">
-        <button class="btn btn-color-1" onclick="window.open('./assets/Rajeev.pdf')">
-          Download CV
-        </button>
-        <button class="btn btn-color-2" onclick="location.href='#contact'">
-          Contact Info
-        </button>
+        <button class="btn btn-color-1" onclick="window.open('./assets/RajeevR.pdf', '_blank')">Download CV</button>
+        <button class="btn btn-color-2" onclick="location.href='#contact'">Contact Me</button>
       </div>
       <div id="socials-container">
-        <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-            onclick="window.open('https://linkedin.com/in/rajeev-rk')"/>
-        <img src="./assets/github.png" alt="My Github profile" class="icon"
-            onclick="window.open('https://github.com/Rajeev-08')"/>
+        <img src="./assets/linkedin.png" alt="Rajeev R on LinkedIn" class="icon" onclick="window.open('https://linkedin.com/in/rajeev-rk', '_blank')">
+        <img src="./assets/github.png" alt="Rajeev R on GitHub" class="icon" onclick="window.open('https://github.com/Rajeev-08', '_blank')">
       </div>
     </div>
   </section>
+
   <section id="about">
     <p class="section__text__p1">Get To Know More</p>
     <h1 class="title">About Me</h1>
@@ -67,251 +67,234 @@
       <div class="about-details-container">
         <div class="text-container">
           <p>
-            I am a Computer Science and Engineering student at NSS College of Engineering (CGPA 9.0), passionate about frontend development and AI. I have developed projects like CrimeLens, a crime prediction tool, and a personalized diet recommendation system, with skills in HTML, CSS, JavaScript, Python, and more.
+            I am a Computer Science and Engineering graduate from NSS College of Engineering with a CGPA of 9.0/10. I build AI-powered analytics platforms, recommendation systems, and real-time collaborative web applications using Python, FastAPI, React, machine learning, and modern full-stack technologies.
           </p>
         </div>
         <div class="about-containers">
           <div class="details-container">
-            <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-            <h3>Experience</h3>
-            <p>AI Intern at Edunet Foundation-IBM SkillsBuild<br>Project : Employee Salary Prediction</p>
+            <img src="./assets/education.png" alt="Education icon" class="icon">
+            <h3>Education</h3>
+            <p>B.Tech in Computer Science and Engineering<br>NSS College of Engineering<br>2023 - 2026 | CGPA: 9.0/10</p>
           </div>
           <div class="details-container">
-            <img src="./assets/education.png" alt="Education icon" class="icon" />
-            <h3>Education</h3>
-            <p>B.Tech in Computer Science and Engineering<br>NSS College of Engineering</p>
+            <img src="./assets/experience.png" alt="Achievement icon" class="icon">
+            <h3>Achievements</h3>
+            <p>Rank 2 statewide in the Kerala B.Tech Lateral Entrance Examination<br>250+ LeetCode problems solved</p>
+          </div>
+          <div class="details-container">
+            <img src="./assets/checkmark.png" alt="Certification icon" class="icon">
+            <h3>Certifications</h3>
+            <p>IBM AI Fundamentals<br>GitHub Professional Certificate<br>Microsoft Generative AI</p>
           </div>
         </div>
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#experience'" />
+    <img src="./assets/arrow.png" alt="Go to skills" class="icon arrow" onclick="location.href='./#experience'">
   </section>
+
   <section id="experience">
     <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Experience</h1>
+    <h1 class="title">Technical Skills</h1>
     <div class="experience-details-container">
       <div class="about-containers">
         <div class="details-container">
-          <h2 class="experience-sub-title">Languages</h2>
+          <h2 class="experience-sub-title">Programming & Frontend</h2>
           <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>C</h3>
-                <p></p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Java</h3>
-                <p></p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Python</h3>
-                <p></p>
-              </div>
-            </article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Python</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>JavaScript</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>TypeScript</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Java</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>C</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>React</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>HTML5 & CSS3</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Tailwind CSS</h3></div></article>
           </div>
         </div>
+
         <div class="details-container">
-          <h2 class="experience-sub-title">Frontend Development</h2>
+          <h2 class="experience-sub-title">Backend & Databases</h2>
           <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>HTML</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>CSS</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>JavaScript</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>React</h3>
-                <p>Basic</p>
-              </div>
-            </article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>FastAPI</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Node.js</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Express.js</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>PostgreSQL</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>MySQL</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>MongoDB</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Redis</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Socket.IO</h3></div></article>
           </div>
         </div>
+
         <div class="details-container">
-          <h2 class="experience-sub-title">Other Technologies</h2>
+          <h2 class="experience-sub-title">AI/ML & Tools</h2>
           <div class="article-container">
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>SQL</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>MongoDB</h3>
-                <p>Basic</p>
-              </div>
-            </article>
-            <article>
-              <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Git</h3>
-                <p>Intermediate</p>
-              </div>
-            </article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>PyTorch</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Scikit-learn</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Pandas & NumPy</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>YOLO</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Docker</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Git & GitHub</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>Jupyter</h3></div></article>
+            <article><img src="./assets/checkmark.png" alt="" class="icon"><div><h3>VS Code</h3></div></article>
           </div>
         </div>
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#projects'" />
+    <img src="./assets/arrow.png" alt="Go to projects" class="icon arrow" onclick="location.href='./#projects'">
   </section>
+
   <section id="projects">
-    <p class="section__text__p1">Browse My Recent</p>
+    <p class="section__text__p1">Explore My Work</p>
     <h1 class="title">Projects</h1>
     <div class="experience-details-container">
       <div class="about-containers">
-        
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-6.png" alt="CrimeLens" class="project-img" onerror="this.src='./assets/project-1.png'" />
+            <img src="./assets/project-6.png" alt="CrimeLens project preview" class="project-img" onerror="this.src='./assets/project-1.png'">
           </div>
           <h2 class="experience-sub-title project-title">CrimeLens</h2>
-          <p class="project-desc">A comprehensive crime pattern prediction and analysis tool.</p>
+          <p class="project-desc">AI-powered crime analytics platform featuring ST-GAT spatio-temporal risk prediction, hotspot mapping, forecasting, 2D/3D visualizations, surveillance analysis, and an AI safety assistant.</p>
+          
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/CrimeLens-v5.0')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/CrimeLens-v5.0', '_blank')">GitHub</button>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-2.png" alt="Project 2" class="project-img" />
+            <img src="./assets/project-2.png" alt="Nutri-Craft project preview" class="project-img">
           </div>
           <h2 class="experience-sub-title project-title">Nutri-Craft</h2>
-          <p class="project-desc">A personalized food and diet recommendation system tailored to individual user profiles.</p>
+          <p class="project-desc">Personalized food and diet recommendation system using K-Nearest Neighbors for recipe matching, with nutrition analysis and individualized diet planning.</p>
+          
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Nutri-Craft')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Nutri-Craft', '_blank')">GitHub</button>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-8.png" alt="LiveWeaver" class="project-img" onerror="this.src='./assets/project-4.jpg'" />
+            <img src="./assets/project-10.png" alt="SyncStudio project preview" class="project-img" onerror="this.src='./assets/project-4.jpg'">
           </div>
-          <h2 class="experience-sub-title project-title">LiveWeaver</h2>
-          <p class="project-desc">A real-time HTML, CSS, and JavaScript editor featuring a live preview interface.</p>
+          <h2 class="experience-sub-title project-title">SyncStudio</h2>
+          <p class="project-desc">Real-time collaborative browser IDE with Monaco Editor, live preview, multi-user code synchronization, JWT authentication, version snapshots, activity tracking, and rollback.</p>
+          
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Real-Time-Code-Design-Translator')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/SyncStudio', '_blank')">GitHub</button>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-7.png" alt="Innovize" class="project-img" onerror="this.src='./assets/project-2.png'" />
+            <img src="./assets/project-11.png" alt="Advanced RAG System project preview" class="project-img" onerror="this.src='./assets/project-6.png'">
+          </div>
+          <h2 class="experience-sub-title project-title">Advanced RAG System</h2>
+          <p class="project-desc">An advanced retrieval-augmented generation system that retrieves relevant knowledge and uses it to produce more grounded, context-aware AI responses.</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/advanced-rag-system', '_blank')">GitHub</button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/project-12.png" alt="Expense Tracker project preview" class="project-img" onerror="this.src='./assets/project-2.png'">
+          </div>
+          <h2 class="experience-sub-title project-title">Expense Tracker</h2>
+          <p class="project-desc">A personal-finance application for recording expenses, organizing transactions, and reviewing spending through a clear and practical interface.</p>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/expense-tracker-rajeev-r', '_blank')">GitHub</button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container">
+            <img src="./assets/project-7.png" alt="Innovize project preview" class="project-img" onerror="this.src='./assets/project-2.png'">
           </div>
           <h2 class="experience-sub-title project-title">Innovize</h2>
-          <p class="project-desc">An innovative software solution bridging the gap between design and functionality.</p>
+          <p class="project-desc">A software project focused on transforming ideas and designs into practical, functional digital experiences.</p>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Innovize')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Innovize', '_blank')">GitHub</button>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-1.png" alt="Project 1" class="project-img nemo" />
+            <img src="./assets/project-1.png" alt="Mental Health Chatbot project preview" class="project-img nemo">
           </div>
           <h2 class="experience-sub-title project-title">Mental Health Chatbot</h2>
-          <p class="project-desc">A conversational agent developed using the Google Gemini API to support mental well-being.</p>
+          <p class="project-desc">A conversational support application powered by the Google Gemini API and designed to provide accessible mental well-being guidance.</p>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Mental-Health-ChatBot')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Mental-Health-ChatBot', '_blank')">GitHub</button>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-4.jpg" alt="Project 4" class="project-img" />
+            <img src="./assets/project-4.jpg" alt="Mileage Prediction project preview" class="project-img">
           </div>
           <h2 class="experience-sub-title project-title">Mileage Prediction</h2>
-          <p class="project-desc">A machine learning model designed to predict vehicle fuel efficiency and mileage.</p>
+          <p class="project-desc">A machine-learning application that estimates vehicle fuel efficiency from relevant vehicle specifications and operating attributes.</p>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Mileage-Prediction')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Mileage-Prediction', '_blank')">GitHub</button>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-5.png" alt="Project 5" class="project-img" />
+            <img src="./assets/project-5.png" alt="Handwritten Digit Prediction project preview" class="project-img">
           </div>
-          <h2 class="experience-sub-title project-title">Digit Prediction</h2>
-          <p class="project-desc">A machine learning model built with scikit-learn and Logistic Regression to classify grayscale handwritten digits.</p>
+          <h2 class="experience-sub-title project-title">Handwritten Digit Prediction</h2>
+          <p class="project-desc">A handwritten-digit classification project using scikit-learn and logistic regression to recognize grayscale digit images.</p>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Handwritten-Digit-Prediction')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Handwritten-Digit-Prediction', '_blank')">GitHub</button>
           </div>
         </div>
-        
 
-        
-
-        
-
-       <div class="details-container color-container">
+        <div class="details-container color-container">
           <div class="article-container">
-            <img src="./assets/project-9.png" alt="Salary Prediction" class="project-img" onerror="this.src='./assets/project-5.png'" />
+            <img src="./assets/project-9.png" alt="Employee Salary Prediction project preview" class="project-img" onerror="this.src='./assets/project-5.png'">
           </div>
-          <h2 class="experience-sub-title project-title">Salary Prediction</h2>
-          <p class="project-desc">A machine learning classification app built with Streamlit and scikit-learn to predict whether an employee's income exceeds $50K.</p>
+          <h2 class="experience-sub-title project-title">Employee Salary Prediction</h2>
+          <p class="project-desc">A Streamlit and scikit-learn classification application that predicts whether an employee's annual income exceeds $50K.</p>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Employee-Salary-Prediction')">Github</button>
+            <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/Rajeev-08/Employee-Salary-Prediction', '_blank')">GitHub</button>
           </div>
         </div>
-
       </div>
     </div>
-    <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow"
-        onclick="location.href='./#contact'" />
+    <img src="./assets/arrow.png" alt="Go to contact" class="icon arrow" onclick="location.href='./#contact'">
   </section>
+
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container">
       <div class="contact-info-container">
-        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon">
         <p><a href="mailto:rajivrk08@gmail.com">rajivrk08@gmail.com</a></p>
       </div>
       <div class="contact-info-container">
-        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-        <p><a href="https://linkedin.com/in/rajeev-r-038695300">LinkedIn</a></p>
+        <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon">
+        <p><a href="https://linkedin.com/in/rajeev-rk" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+      </div>
+      <div class="contact-info-container">
+        <p><a href="tel:+919605824483">+91 96058 24483</a></p>
       </div>
     </div>
   </section>
+
   <footer>
     <nav>
       <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <p>Copyright © 2026 Rajeev R. All Rights Reserved.</p>
+    <p>Copyright &copy; 2026 Rajeev R. All Rights Reserved.</p>
   </footer>
   <script src="script.js"></script>
 </body>
