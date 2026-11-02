@@ -1,10 +1,116 @@
-const projects=window.PROJECTS;const root=document.documentElement;const portfolio=document.getElementById('portfolioView');const detail=document.getElementById('projectDetail');const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function art(type){if(type==='crime')return '<div class="project-art art-crime" aria-label="Designed visualization summary: crime map and analytics"><div class="map-grid"></div><div class="map-contour"></div><div class="map-pin">HOTSPOT</div><span class="art-label">SPATIAL RISK / INCIDENT DENSITY</span></div>';if(type==='sync')return '<div class="project-art art-sync" aria-label="Designed visualization summary: collaborative code editor"><div class="editor-shell"><div class="editor-top"><i></i><i></i><i></i></div><div class="editor-body"><div class="line-numbers">01<br>02<br>03<br>04<br>05<br>06<br>07</div><div class="code-lines"><span>const</span> workspace = () =&gt; {<br>&nbsp; return (&lt;Editor /&gt;);<br>};<br><br><span>sync</span>.connect(project);<br>preview.render();</div></div><div class="editor-status">2 COLLABORATORS · LIVE</div></div><span class="art-label">BROWSER IDE / SHARED WORKSPACE</span></div>';if(type==='nutri')return '<div class="project-art art-nutri" aria-label="Designed visualization summary: nutrition recipe plate"><div class="plate"><i class="food"></i><i class="food"></i><i class="food"></i><i class="food"></i></div><span class="nutri-label">MEAL MATCH / NUTRITION PROFILE</span></div>';return '<div class="project-art art-rag" aria-label="Designed visualization summary: retrieval pipeline"><div class="rag-flow"><div class="rag-node">QUERY<br>TRANSFORM</div><i class="rag-line"></i><div class="rag-node">HYBRID<br>RETRIEVE</div><i class="rag-line"></i><div class="rag-node">RERANK<br>+ GRADE</div><i class="rag-line"></i><div class="rag-node">CITED<br>ANSWER</div></div><span class="art-label">RETRIEVAL / GROUNDED GENERATION</span></div>'}
-function tags(p){return p.stack.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}
-function card(p,featured=false){return `<article class="${featured?'project-feature':'project-card'}">${art(p.visual)}<div class="project-content"><span class="section-no">${esc(p.eyebrow)}</span><h3>${esc(p.name)} <span style="font-family:var(--serif);font-weight:400;color:var(--muted)">— ${esc(p.title)}</span></h3><p>${esc(p.description)}</p><div class="tags">${tags(p)}</div><div class="project-actions"><a href="?project=${encodeURIComponent(p.id)}" data-project="${esc(p.id)}">View project details <span>↗</span></a><a href="${esc(p.repo)}" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div></div></article>`}
+const projects = window.PROJECTS;
+const root = document.documentElement;
+const portfolio = document.getElementById("portfolioView");
+const detail = document.getElementById("projectDetail");
+const esc = (s) =>
+  String(s).replace(
+    /[&<>"']/g,
+    (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        c
+      ],
+  );
+function art(type) {
+  if (type === "crime")
+    return '<div class="project-art art-crime" aria-label="Designed visualization summary: crime map and analytics"><div class="map-grid"></div><div class="map-contour"></div><div class="map-pin">HOTSPOT</div><span class="art-label">SPATIAL RISK / INCIDENT DENSITY</span></div>';
+  if (type === "sync")
+    return '<div class="project-art art-sync" aria-label="Designed visualization summary: collaborative code editor"><div class="editor-shell"><div class="editor-top"><i></i><i></i><i></i></div><div class="editor-body"><div class="line-numbers">01<br>02<br>03<br>04<br>05<br>06<br>07</div><div class="code-lines"><span>const</span> workspace = () =&gt; {<br>&nbsp; return (&lt;Editor /&gt;);<br>};<br><br><span>sync</span>.connect(project);<br>preview.render();</div></div><div class="editor-status">2 COLLABORATORS · LIVE</div></div><span class="art-label">BROWSER IDE / SHARED WORKSPACE</span></div>';
+  if (type === "nutri")
+    return '<div class="project-art art-nutri" aria-label="Designed visualization summary: nutrition recipe plate"><div class="plate"><i class="food"></i><i class="food"></i><i class="food"></i><i class="food"></i></div><span class="nutri-label">MEAL MATCH / NUTRITION PROFILE</span></div>';
+  return '<div class="project-art art-rag" aria-label="Designed visualization summary: retrieval pipeline"><div class="rag-flow"><div class="rag-node">QUERY<br>TRANSFORM</div><i class="rag-line"></i><div class="rag-node">HYBRID<br>RETRIEVE</div><i class="rag-line"></i><div class="rag-node">RERANK<br>+ GRADE</div><i class="rag-line"></i><div class="rag-node">CITED<br>ANSWER</div></div><span class="art-label">RETRIEVAL / GROUNDED GENERATION</span></div>';
+}
+function tags(p) {
+  return p.stack.map((x) => `<span class="tag">${esc(x)}</span>`).join("");
+}
+function card(p, featured = false) {
+  return `<article class="${featured ? "project-feature" : "project-card"}">${art(p.visual)}<div class="project-content"><span class="section-no">${esc(p.eyebrow)}</span><h3>${esc(p.name)} <span style="font-family:var(--serif);font-weight:400;color:var(--muted)">— ${esc(p.title)}</span></h3><p>${esc(p.description)}</p><div class="tags">${tags(p)}</div><div class="project-actions"><a href="?project=${encodeURIComponent(p.id)}" data-project="${esc(p.id)}">View project details <span>↗</span></a><a href="${esc(p.repo)}" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div></div></article>`;
+}
 // Properly build tag markup separately (avoid interpreting project data as HTML).
-const crime=projects.find(p=>p.id==='crimelens');document.getElementById('featuredProject').innerHTML=card(crime,true);document.getElementById('projectGrid').innerHTML=projects.filter(p=>p.id!=='crimelens').map(p=>card(p)).join('');
-function showProject(id){const p=projects.find(x=>x.id===id);if(!p){portfolio.hidden=false;detail.hidden=true;document.title='Rajeev R. — Software Developer';return}portfolio.hidden=true;detail.hidden=false;document.title=`${p.name} — Rajeev R.`;detail.innerHTML=`<a class="back-link" href="./#projects" id="backProjects">← Back to all projects</a><div class="detail-top"><div><span class="section-no">${esc(p.eyebrow)}</span><h1>${esc(p.name)}<br><em>${esc(p.title)}</em></h1><p>${esc(p.description)}</p><div class="tags">${tags(p)}</div><div class="detail-links"><a class="button button-primary" href="${esc(p.repo)}" target="_blank" rel="noreferrer">View repository <span>↗</span></a>${p.demo?`<a class="button" href="${esc(p.demo)}" target="_blank" rel="noreferrer">Live demo ↗</a>`:''}</div></div>${art(p.visual)}</div><div class="detail-blocks"><section class="detail-block"><h2>Problem</h2><p>${esc(p.problem)}</p></section><section class="detail-block"><h2>Approach</h2><p>${esc(p.solution)}</p></section><section class="detail-block"><h2>Implemented capabilities</h2><ul>${p.features.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section><section class="detail-block"><h2>Technical architecture</h2><p>${esc(p.architecture)}</p></section><section class="detail-block"><h2>Technology</h2><div class="tags">${tags(p)}</div></section><section class="detail-block"><h2>Repository</h2><p><a class="text-link" href="${esc(p.repo)}" target="_blank" rel="noreferrer">${esc(p.repo)} ↗</a></p></section></div><div class="detail-disclosure"><strong>Implementation notes</strong><br>${esc(p.evidence)}<br><br>Portfolio visual above is a designed explanatory illustration, not a screenshot of the application. No project screenshot or verified live demo was included in the supplied files.</div>`;document.getElementById('backProjects').addEventListener('click',()=>{history.pushState({},'',location.pathname+'#projects');portfolio.hidden=false;detail.hidden=true;document.title='Rajeev R. — Software Developer';setTimeout(()=>document.getElementById('projects').scrollIntoView(),0)});window.scrollTo({top:0,behavior:'smooth'})}
-function route(){const id=new URLSearchParams(location.search).get('project');if(id)showProject(id);else{portfolio.hidden=false;detail.hidden=true;document.title='Rajeev R. — Software Developer'}}document.addEventListener('click',e=>{const link=e.target.closest('[data-project]');if(!link)return;e.preventDefault();const id=link.dataset.project;history.pushState({},'',`?project=${encodeURIComponent(id)}`);showProject(id)});window.addEventListener('popstate',route);route();
-const stored=localStorage.getItem('rajiv-theme');if(stored)root.dataset.theme=stored;document.getElementById('themeToggle').addEventListener('click',()=>{root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';localStorage.setItem('rajiv-theme',root.dataset.theme)});const menu=document.getElementById('menuToggle');menu.addEventListener('click',()=>{const open=document.querySelector('.nav').classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close navigation':'Open navigation')});document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelector('.nav').classList.remove('open');menu.setAttribute('aria-expanded','false')}));document.getElementById('year').textContent=new Date().getFullYear();
-const form=document.getElementById('contactForm');form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const name=String(data.get('name')).trim(),email=String(data.get('email')).trim(),subject=String(data.get('subject')).trim(),message=String(data.get('message')).trim();if(name.length<2||subject.length<3||message.length<10){document.getElementById('formStatus').textContent='Please check the name, subject, and message length.';return}const body=`Hi Rajeev,\n\n${message}\n\n— ${name}\n${email}`;const href=`mailto:rajivrk08@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;document.getElementById('formStatus').textContent='Opening your email app with a draft. The message is not sent until you send it there.';window.location.href=href});
+const crime = projects.find((p) => p.id === "crimelens");
+document.getElementById("featuredProject").innerHTML = card(crime, true);
+document.getElementById("projectGrid").innerHTML = projects
+  .filter((p) => p.id !== "crimelens")
+  .map((p) => card(p))
+  .join("");
+function showProject(id) {
+  const p = projects.find((x) => x.id === id);
+  if (!p) {
+    portfolio.hidden = false;
+    detail.hidden = true;
+    document.title = "Rajeev R. — Software Developer";
+    return;
+  }
+  portfolio.hidden = true;
+  detail.hidden = false;
+  document.title = `${p.name} — Rajeev R.`;
+  detail.innerHTML = `<a class="back-link" href="./#projects" id="backProjects">← Back to all projects</a><div class="detail-top"><div><span class="section-no">${esc(p.eyebrow)}</span><h1>${esc(p.name)}<br><em>${esc(p.title)}</em></h1><p>${esc(p.description)}</p><div class="tags">${tags(p)}</div><div class="detail-links"><a class="button button-primary" href="${esc(p.repo)}" target="_blank" rel="noreferrer">View repository <span>↗</span></a>${p.demo ? `<a class="button" href="${esc(p.demo)}" target="_blank" rel="noreferrer">Live demo ↗</a>` : ""}</div></div>${art(p.visual)}</div><div class="detail-blocks"><section class="detail-block"><h2>Problem</h2><p>${esc(p.problem)}</p></section><section class="detail-block"><h2>Approach</h2><p>${esc(p.solution)}</p></section><section class="detail-block"><h2>Implemented capabilities</h2><ul>${p.features.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></section><section class="detail-block"><h2>Technical architecture</h2><p>${esc(p.architecture)}</p></section><section class="detail-block"><h2>Technology</h2><div class="tags">${tags(p)}</div></section><section class="detail-block"><h2>Repository</h2><p><a class="text-link" href="${esc(p.repo)}" target="_blank" rel="noreferrer">${esc(p.repo)} ↗</a></p></section></div><div class="detail-disclosure"><strong>Implementation notes</strong><br>${esc(p.evidence)}<br><br>Portfolio visual above is a designed explanatory illustration, not a screenshot of the application. No project screenshot or verified live demo was included in the supplied files.</div>`;
+  document.getElementById("backProjects").addEventListener("click", () => {
+    history.pushState({}, "", location.pathname + "#projects");
+    portfolio.hidden = false;
+    detail.hidden = true;
+    document.title = "Rajeev R. — Software Developer";
+    setTimeout(() => document.getElementById("projects").scrollIntoView(), 0);
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function route() {
+  const id = new URLSearchParams(location.search).get("project");
+  if (id) showProject(id);
+  else {
+    portfolio.hidden = false;
+    detail.hidden = true;
+    document.title = "Rajeev R. — Software Developer";
+  }
+}
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("[data-project]");
+  if (!link) return;
+  e.preventDefault();
+  const id = link.dataset.project;
+  history.pushState({}, "", `?project=${encodeURIComponent(id)}`);
+  showProject(id);
+});
+window.addEventListener("popstate", route);
+route();
+const stored = localStorage.getItem("rajiv-theme");
+if (stored) root.dataset.theme = stored;
+document.getElementById("themeToggle").addEventListener("click", () => {
+  root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+  localStorage.setItem("rajiv-theme", root.dataset.theme);
+});
+const menu = document.getElementById("menuToggle");
+menu.addEventListener("click", () => {
+  const open = document.querySelector(".nav").classList.toggle("open");
+  menu.setAttribute("aria-expanded", String(open));
+  menu.setAttribute(
+    "aria-label",
+    open ? "Close navigation" : "Open navigation",
+  );
+});
+document.querySelectorAll(".nav a").forEach((a) =>
+  a.addEventListener("click", () => {
+    document.querySelector(".nav").classList.remove("open");
+    menu.setAttribute("aria-expanded", "false");
+  }),
+);
+document.getElementById("year").textContent = new Date().getFullYear();
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!form.reportValidity()) return;
+  const data = new FormData(form);
+  const name = String(data.get("name")).trim(),
+    email = String(data.get("email")).trim(),
+    subject = String(data.get("subject")).trim(),
+    message = String(data.get("message")).trim();
+  if (name.length < 2 || subject.length < 3 || message.length < 10) {
+    document.getElementById("formStatus").textContent =
+      "Please check the name, subject, and message length.";
+    return;
+  }
+  const body = `Hi Rajeev,\n\n${message}\n\n— ${name}\n${email}`;
+  const href = `mailto:rajivrk08@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  document.getElementById("formStatus").textContent =
+    "Opening your email app with a draft. The message is not sent until you send it there.";
+  window.location.href = href;
+});
