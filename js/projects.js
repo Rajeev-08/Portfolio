@@ -61,6 +61,34 @@ window.PROJECTS = [
     "visual": "sync"
   },
   {
+    "id": "advanced-rag",
+    "name": "Advanced RAG System",
+    "title": "Grounded Question Answering with Hybrid Retrieval",
+    "eyebrow": "AI engineering · Retrieval",
+    "description": "A retrieval-augmented question answering system with hybrid search, reranking, evidence grading, citations, and abstention.",
+    "repo": "https://github.com/Rajeev-08/advanced-rag-system",
+    "stack": [
+      "Python",
+      "Streamlit",
+      "Chroma",
+      "BM25",
+      "Sentence Transformers",
+      "Groq"
+    ],
+    "features": [
+      "Conversation-aware query rewriting and sub-query decomposition",
+      "Dense vector retrieval combined with BM25 and reciprocal-rank fusion",
+      "Cross-encoder reranking and context sufficiency grading",
+      "Corrective retrieval, cited answers, and abstention when evidence is weak",
+      "Inspectable retrieval traces and an automated evaluation harness"
+    ],
+    "problem": "Naive vector search can miss exact terms and pass irrelevant context to language models, increasing unsupported answers.",
+    "solution": "The pipeline combines lexical and semantic retrieval, reranks candidates, grades evidence, and abstains when documents do not support a reliable answer.",
+    "architecture": "A Python pipeline transforms queries, runs Chroma vector and BM25 retrieval in parallel, fuses and reranks results, grades context, and generates grounded answers through a configurable Groq client. Streamlit provides a lightweight interface.",
+    "demo": null,
+    "visual": "rag"
+  },
+  {
     "id": "nutri-craft",
     "name": "Nutri-Craft",
     "title": "Personalized Food & Diet Recommendation System",
@@ -88,33 +116,5 @@ window.PROJECTS = [
     "architecture": "The project includes a Streamlit interface and Python analysis/data-processing code, with FastAPI and Docker listed in its project documentation. The README describes content-based matching; model and deployment configuration should be confirmed in the live repository before relying on an active hosted service.",
     "demo": null,
     "visual": "nutri"
-  },
-  {
-    "id": "advanced-rag",
-    "name": "Advanced RAG System",
-    "title": "Grounded Question Answering with Hybrid Retrieval",
-    "eyebrow": "AI engineering · Retrieval",
-    "description": "A retrieval-augmented question answering system with hybrid search, reranking, evidence grading, citations, and abstention.",
-    "repo": "https://github.com/Rajeev-08/advanced-rag-system",
-    "stack": [
-      "Python",
-      "Streamlit",
-      "Chroma",
-      "BM25",
-      "Sentence Transformers",
-      "Groq"
-    ],
-    "features": [
-      "Conversation-aware query rewriting and sub-query decomposition",
-      "Dense vector retrieval combined with BM25 and reciprocal-rank fusion",
-      "Cross-encoder reranking and context sufficiency grading",
-      "Corrective retrieval, cited answers, and abstention when evidence is weak",
-      "Inspectable retrieval traces and an automated evaluation harness"
-    ],
-    "problem": "Naive vector search can miss exact terms and pass irrelevant context to language models, increasing unsupported answers.",
-    "solution": "The pipeline combines lexical and semantic retrieval, reranks candidates, grades evidence, and abstains when documents do not support a reliable answer.",
-    "architecture": "A Python pipeline transforms queries, runs Chroma vector and BM25 retrieval in parallel, fuses and reranks results, grades context, and generates grounded answers through a configurable Groq client. Streamlit provides a lightweight interface.",
-    "demo": null,
-    "visual": "rag"
   }
 ];
