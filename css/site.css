@@ -6,3 +6,32 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
 .project-card .project-thumbnail{min-height:0;aspect-ratio:16/9;border-bottom:1px solid var(--line)}.project-thumbnail img{display:block;width:100%;height:100%;object-fit:cover}.project-card .project-content{flex:1}
+
+/* Quiet texture and restrained interactions. */
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:30;background:url('../assets/grain.svg') repeat;opacity:.025}
+.project-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+.project-card:is(:hover,:focus-within){border-color:color-mix(in srgb,var(--accent) 48%,var(--line));box-shadow:0 6px 24px #00000014}
+.project-thumbnail img,.thumbnail-motion{transition:transform .5s cubic-bezier(.2,.65,.3,1)}
+.thumbnail-motion{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.thumbnail-motion>*{opacity:0}
+.thumbnail-pulse{fill:none;stroke:#c6f277;stroke-width:2;transform-box:fill-box;transform-origin:center}
+.thumbnail-step{fill:#c6f277;fill-opacity:.12;stroke:#c6f277;stroke-width:1}
+.thumbnail-nutrition{fill:#e3f4ba}
+.project-actions a span,.social-row a span,.button span,.text-link span,.email-link span,.resume-link span{display:inline-block;transition:transform .22s ease}
+@media(prefers-reduced-motion:no-preference){
+  .project-card:is(:hover,:focus-within) .project-thumbnail img,.project-card:is(:hover,:focus-within) .thumbnail-motion{transform:scale(1.03)}
+  .project-card:is(:hover,:focus-within) .thumbnail-pulse{animation:map-pulse 2.4s ease-out infinite}
+  .project-card:is(:hover,:focus-within) .thumbnail-cursor{animation:cursor-blink 1.1s steps(1,end) infinite}
+  .project-card:is(:hover,:focus-within) .thumbnail-step{animation:retrieval-step 2.1s ease-in-out infinite}
+  .project-card:is(:hover,:focus-within) .thumbnail-nutrition{animation:nutrition-glow 2.4s ease-in-out infinite}
+  .project-actions a:is(:hover,:focus-visible) span,.social-row a:is(:hover,:focus-visible) span,.button:is(:hover,:focus-visible) span,.text-link:is(:hover,:focus-visible) span,.email-link:is(:hover,:focus-visible) span,.resume-link:is(:hover,:focus-visible) span{transform:translate(3px,-3px)}
+}
+@keyframes map-pulse{0%{opacity:.7;transform:scale(.6)}85%,100%{opacity:0;transform:scale(2)}}
+@keyframes cursor-blink{0%,49%{opacity:0}50%,100%{opacity:1}}
+@keyframes retrieval-step{0%,33%,100%{opacity:0}12%,24%{opacity:1}}
+@keyframes nutrition-glow{0%,100%{opacity:0}40%{opacity:.5}}
+@media(prefers-reduced-motion:reduce){
+  .project-card:hover{transform:none}
+  .thumbnail-motion{display:none}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
